@@ -35,7 +35,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, NSURLConnecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         //Setup Location Manager
         locationManager.delegate = self
