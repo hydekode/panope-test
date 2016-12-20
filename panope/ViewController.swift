@@ -19,19 +19,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, NSURLConnecti
     var longitude = 0.00;
     
     var myLocations: [CLLocation] = []
+    var myMarkers: [CLLocationCoordinate2D] = []
     
     var gMap: GMSMapView?
     
-    func sayHello()
-    {
-        NSLog("Create Marker")
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-         marker.position = (myLocations.last?.coordinate)!
-         marker.title = "position"
-         marker.snippet = "boop"
-         marker.map = gMap
-    }
+    var currentPoint: CLLocationCoordinate2D?
+    var lastPoint: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +37,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, NSURLConnecti
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
-       var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: #selector(sayHello), userInfo: nil, repeats: true)
+       var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: #selector(setMarker), userInfo: nil, repeats: true)
 
     }
 
@@ -66,6 +59,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, NSURLConnecti
 
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         myLocations.append(locations[0] as CLLocation)
+        lastPoint=myLocations[0].coordinate
         
         if let location11 = locations.first {
             //print("Found User's location: \(location11)")
@@ -73,6 +67,41 @@ class ViewController: UIViewController, CLLocationManagerDelegate, NSURLConnecti
             latitude = location11.coordinate.latitude
             longitude = location11.coordinate.longitude
         }
+    }
+    
+    func setMarker()
+    {
+        currentPoint=myLocations.last?.coordinate
+        NSLog("Create Marker")
+        // Creates a marker in the center of the map.
+        let marker = GMSMarker()
+        marker.position = currentPoint!
+        marker.title = "position"
+        marker.snippet = "boop"
+        marker.map = gMap
+        
+        //print("APPENDING :", currentPoint!)
+        myMarkers.append(currentPoint!)
+        
+        if(myMarkers.count>1){
+            drawRouteLine()
+        }
+    }
+    
+    func drawRouteLine()
+    {
+        NSLog("Drawing Line")
+        let path = GMSMutablePath()
+        
+        //print(myMarkers.last)
+        //print(myMarkers[myMarkers.count-1])
+        
+        path.addCoordinate(myMarkers.last!)
+        path.addCoordinate(myMarkers[myMarkers.count-2])
+        let polyline = GMSPolyline(path: path)
+        polyline.strokeWidth=5.0
+        polyline.geodesic=true
+        polyline.map=gMap
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
