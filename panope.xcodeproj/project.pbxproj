@@ -12,9 +12,12 @@
 		C17A550A1E0684EB001EC277 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17A55081E0684EB001EC277 /* Main.storyboard */; };
 		C17A550C1E0684EB001EC277 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C17A550B1E0684EB001EC277 /* Assets.xcassets */; };
 		C17A550F1E0684EB001EC277 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17A550D1E0684EB001EC277 /* LaunchScreen.storyboard */; };
+		F10A70B217D1826746DC7310 /* libPods-panope.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CA8E333D39F295BF7100B5 /* libPods-panope.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01CA8E333D39F295BF7100B5 /* libPods-panope.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-panope.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1555F85317E1749CF300DF49 /* Pods-panope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-panope.debug.xcconfig"; path = "Pods/Target Support Files/Pods-panope/Pods-panope.debug.xcconfig"; sourceTree = "<group>"; };
 		C17A55011E0684EB001EC277 /* panope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = panope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17A55041E0684EB001EC277 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C17A55061E0684EB001EC277 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		C17A550B1E0684EB001EC277 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C17A550E1E0684EB001EC277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C17A55101E0684EB001EC277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8AB399D8C7289D8946FBF64 /* Pods-panope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-panope.release.xcconfig"; path = "Pods/Target Support Files/Pods-panope/Pods-panope.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F10A70B217D1826746DC7310 /* libPods-panope.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EBB6236448B3F5144C21386 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1555F85317E1749CF300DF49 /* Pods-panope.debug.xcconfig */,
+				F8AB399D8C7289D8946FBF64 /* Pods-panope.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AA72913941E9CA193DE15F6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01CA8E333D39F295BF7100B5 /* libPods-panope.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C17A54F81E0684EB001EC277 = {
 			isa = PBXGroup;
 			children = (
 				C17A55031E0684EB001EC277 /* panope */,
 				C17A55021E0684EB001EC277 /* Products */,
+				0EBB6236448B3F5144C21386 /* Pods */,
+				AA72913941E9CA193DE15F6D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C17A55131E0684EB001EC277 /* Build configuration list for PBXNativeTarget "panope" */;
 			buildPhases = (
+				E046ECD9FECE31BAA3292D10 /* [CP] Check Pods Manifest.lock */,
 				C17A54FD1E0684EB001EC277 /* Sources */,
 				C17A54FE1E0684EB001EC277 /* Frameworks */,
 				C17A54FF1E0684EB001EC277 /* Resources */,
+				5FE1FD06C93BE9C839140413 /* [CP] Embed Pods Frameworks */,
+				2C40D45EBA3877F115E556D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C40D45EBA3877F115E556D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-panope/Pods-panope-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FE1FD06C93BE9C839140413 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-panope/Pods-panope-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E046ECD9FECE31BAA3292D10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C17A54FD1E0684EB001EC277 /* Sources */ = {
@@ -247,6 +322,7 @@
 		};
 		C17A55141E0684EB001EC277 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1555F85317E1749CF300DF49 /* Pods-panope.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = panope/Info.plist;
@@ -258,6 +334,7 @@
 		};
 		C17A55151E0684EB001EC277 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8AB399D8C7289D8946FBF64 /* Pods-panope.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = panope/Info.plist;
@@ -286,6 +363,7 @@
 				C17A55151E0684EB001EC277 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
