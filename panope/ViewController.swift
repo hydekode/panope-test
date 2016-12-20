@@ -20,6 +20,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, NSURLConnecti
     
     var myLocations: [CLLocation] = []
     
+    var gMap: GMSMapView?
+    
+    func sayHello()
+    {
+        NSLog("Create Marker")
+        // Creates a marker in the center of the map.
+        let marker = GMSMarker()
+         marker.position = (myLocations.last?.coordinate)!
+         marker.title = "position"
+         marker.snippet = "boop"
+         marker.map = gMap
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -31,6 +44,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, NSURLConnecti
         locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
+        
+       var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: #selector(sayHello), userInfo: nil, repeats: true)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,18 +57,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, NSURLConnecti
     override func loadView() {
         var userPosition=CLLocationCoordinate2DMake(latitude, longitude)
         
-        let camera = GMSCameraPosition.cameraWithTarget(userPosition, zoom: 6.0)
-        let mapView = GMSMapView.mapWithFrame(CGRect.zero, camera: camera)
-        mapView.myLocationEnabled = true
-        mapView.settings.myLocationButton=true
-        view = mapView
-        
-        // Creates a marker in the center of the map.
-        /*let marker = GMSMarker()
-        marker.position = userPosition
-        marker.title = "position"
-        marker.snippet = "Position: \(userPosition.latitude), \(userPosition.longitude)"
-        marker.map = mapView*/
+        let camera = GMSCameraPosition.cameraWithTarget(userPosition, zoom: 3.0)
+        //let mapView = GMSMapView.mapWithFrame(CGRect.zero, camera: camera)
+        gMap=GMSMapView.mapWithFrame(CGRect.zero, camera: camera)
+        gMap!.myLocationEnabled = true
+        gMap!.settings.myLocationButton=true
+        view = gMap
     }
 
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
