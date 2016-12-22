@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kYQ-xc-axL">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="panope" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="panope" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -24,7 +24,107 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="331" y="164"/>
+            <point key="canvasLocation" x="1913" y="-26"/>
+        </scene>
+        <!--Main Menu-->
+        <scene sceneID="7fd-4M-k3q">
+            <objects>
+                <viewController id="3ey-GA-E28" customClass="MainMenuViewController" customModule="panope" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yYK-0C-7A7"/>
+                        <viewControllerLayoutGuide type="bottom" id="e9s-Qg-d4w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MGr-4X-rof">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdw-P9-6qp">
+                                <rect key="frame" x="241" y="179" width="118" height="30"/>
+                                <state key="normal" title="Create a Caravan"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPG-cU-unF">
+                                <rect key="frame" x="250" y="230" width="101" height="30"/>
+                                <state key="normal" title="Join a Caravan"/>
+                                <connections>
+                                    <action selector="joinCarBtn_click:" destination="3ey-GA-E28" eventType="touchUpInside" id="CUj-VG-9t4"/>
+                                    <segue destination="4R3-SM-p6c" kind="show" id="q6V-YC-x04"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZPG-cU-unF" firstAttribute="top" secondItem="Vdw-P9-6qp" secondAttribute="bottom" constant="21" id="77s-e1-Hfr"/>
+                            <constraint firstItem="ZPG-cU-unF" firstAttribute="centerX" secondItem="MGr-4X-rof" secondAttribute="centerX" id="V9a-r1-dfZ"/>
+                            <constraint firstItem="Vdw-P9-6qp" firstAttribute="centerX" secondItem="MGr-4X-rof" secondAttribute="centerX" id="xD5-Yk-qhN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Main Menu" id="yVL-KQ-VqG"/>
+                    <connections>
+                        <outlet property="joinCarBtn" destination="ZPG-cU-unF" id="Ynr-TE-5Xh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eur-9h-aph" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2727" y="-721"/>
+        </scene>
+        <!--Enter Party CodeVC-->
+        <scene sceneID="7Uh-rE-kUr">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLs-ww-gvt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="4R3-SM-p6c" customClass="EnterPartyCodeVC" customModule="panope" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hJc-IU-eDE"/>
+                        <viewControllerLayoutGuide type="bottom" id="oTB-Zh-VZs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IC4-U3-Plm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ALD-dK-GYC">
+                                <rect key="frame" x="196" y="196" width="201" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Enter Party Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6N-Yc-gdZ">
+                                <rect key="frame" x="195" y="143" width="202" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1L-5H-wVO">
+                                <rect key="frame" x="271" y="264" width="59" height="30"/>
+                                <state key="normal" title="Let's go!"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L6N-Yc-gdZ" firstAttribute="centerX" secondItem="IC4-U3-Plm" secondAttribute="centerX" id="Hmg-3B-Xjo"/>
+                            <constraint firstItem="ALD-dK-GYC" firstAttribute="centerX" secondItem="IC4-U3-Plm" secondAttribute="centerX" id="Z0e-Z1-axT"/>
+                            <constraint firstItem="e1L-5H-wVO" firstAttribute="centerX" secondItem="IC4-U3-Plm" secondAttribute="centerX" id="aqm-Gv-xjo"/>
+                            <constraint firstItem="ALD-dK-GYC" firstAttribute="top" secondItem="L6N-Yc-gdZ" secondAttribute="bottom" constant="20" id="bkh-ba-afq"/>
+                        </constraints>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3374" y="-721"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rKu-Jl-rar">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kYQ-xc-axL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m78-7B-kDv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3ey-GA-E28" kind="relationship" relationship="rootViewController" id="LZU-B5-0JV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="47m-xA-VLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1913" y="-713"/>
         </scene>
     </scenes>
 </document>

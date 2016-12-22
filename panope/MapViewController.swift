@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MapViewController.swift
 //  panope
 //
 //  Created by Julia Syi on 12/18/16.
@@ -12,7 +12,7 @@ import GooglePlaces
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate, NSURLConnectionDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, NSURLConnectionDelegate {
         
     let locationManager = CLLocationManager()
     var latitude = 0.00;

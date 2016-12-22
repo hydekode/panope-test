@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		C17A55051E0684EB001EC277 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A55041E0684EB001EC277 /* AppDelegate.swift */; };
-		C17A55071E0684EB001EC277 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A55061E0684EB001EC277 /* ViewController.swift */; };
+		C17A55071E0684EB001EC277 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A55061E0684EB001EC277 /* MapViewController.swift */; };
 		C17A550A1E0684EB001EC277 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17A55081E0684EB001EC277 /* Main.storyboard */; };
 		C17A550C1E0684EB001EC277 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C17A550B1E0684EB001EC277 /* Assets.xcassets */; };
 		C17A550F1E0684EB001EC277 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17A550D1E0684EB001EC277 /* LaunchScreen.storyboard */; };
+		C1F589881E0B6AB900571AD1 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F589871E0B6AB900571AD1 /* MainMenuViewController.swift */; };
+		C1F5898C1E0B949200571AD1 /* EnterPartyCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F5898B1E0B949200571AD1 /* EnterPartyCodeVC.swift */; };
 		F10A70B217D1826746DC7310 /* libPods-panope.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CA8E333D39F295BF7100B5 /* libPods-panope.a */; };
 /* End PBXBuildFile section */
 
@@ -20,11 +22,13 @@
 		1555F85317E1749CF300DF49 /* Pods-panope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-panope.debug.xcconfig"; path = "Pods/Target Support Files/Pods-panope/Pods-panope.debug.xcconfig"; sourceTree = "<group>"; };
 		C17A55011E0684EB001EC277 /* panope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = panope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17A55041E0684EB001EC277 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C17A55061E0684EB001EC277 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C17A55061E0684EB001EC277 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C17A55091E0684EB001EC277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C17A550B1E0684EB001EC277 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C17A550E1E0684EB001EC277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C17A55101E0684EB001EC277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1F589871E0B6AB900571AD1 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		C1F5898B1E0B949200571AD1 /* EnterPartyCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPartyCodeVC.swift; sourceTree = "<group>"; };
 		F8AB399D8C7289D8946FBF64 /* Pods-panope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-panope.release.xcconfig"; path = "Pods/Target Support Files/Pods-panope/Pods-panope.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,7 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				C17A55041E0684EB001EC277 /* AppDelegate.swift */,
-				C17A55061E0684EB001EC277 /* ViewController.swift */,
+				C17A55061E0684EB001EC277 /* MapViewController.swift */,
+				C1F589871E0B6AB900571AD1 /* MainMenuViewController.swift */,
+				C1F5898B1E0B949200571AD1 /* EnterPartyCodeVC.swift */,
 				C17A55081E0684EB001EC277 /* Main.storyboard */,
 				C17A550B1E0684EB001EC277 /* Assets.xcassets */,
 				C17A550D1E0684EB001EC277 /* LaunchScreen.storyboard */,
@@ -210,7 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C17A55071E0684EB001EC277 /* ViewController.swift in Sources */,
+				C1F589881E0B6AB900571AD1 /* MainMenuViewController.swift in Sources */,
+				C1F5898C1E0B949200571AD1 /* EnterPartyCodeVC.swift in Sources */,
+				C17A55071E0684EB001EC277 /* MapViewController.swift in Sources */,
 				C17A55051E0684EB001EC277 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
